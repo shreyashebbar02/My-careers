@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My-Careers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit:cover;
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="https://jovian-careers-website.aakashns.repl.co/static/banner.jpeg" >
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">
+        {{company_name}} 
+      </h1>
+      <div class="row" style="margin-bottom:32px">
+        <div class="col-md-6">
+      <p class="lead">
+        Welcome to My-Careers, your ultimate destination for a seamless job application experience. At My-Careers, we pride ourselves on connecting talented individuals with diverse job opportunities. Our user-friendly platform ensures a straightforward application process, allowing you to explore and apply for a wide range of positions across various industries. Whether you're a seasoned professional or a recent graduate, My-Careers is here to simplify your job search and help you take the next step in your career journey. Join us and discover the perfect match for your skills and aspirations.
+      </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+        <img src="/static/people.jpeg" style="height:320px;border-radius:4px;">
+        </div>
+      </div>
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+      <a class="btn btn-primary btn-lg">Contact Us</a>
+      </div>
+    </div>
+  </body>
+</html>
