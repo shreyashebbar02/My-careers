@@ -1,15 +1,10 @@
 from flask import Flask, jsonify, render_template
-from sqlalchemy import text
 
-from database import engine
+from database import load_jobs_from_db
 
 app = Flask(__name__)
-def load_jobs_from_db():
-  with engine.connect() as conn:
-    result = conn.execute(text("select *from jobs;"))
-    jobs = []
-    for row in result.all():
-      jobs.append(dict(row))
+
+JOBS = [{"hello"}]
 
 
 @app.route("/")
