@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, text
 
-db_connection_string = "mysql+pymysql://hb7i1o31cw024amigpzh:pscale_pw_x4LgA7V3oxRlZ5zVbEs0FdMluiRAYJCAvESTesKy9Ho@aws.connect.psdb.cloud/mycareers?charset=utf8mb4"
+db_connection_string = "mysql+pymysql://u25x8dti78pwwfsu774l:pscale_pw_DxaGUWS3Ktz2CG5x9Go09L6aXUExjsJC9ZzKXz8NvBg@aws.connect.psdb.cloud/mycareers?charset=utf8mb4"
 
 engine = create_engine(db_connection_string, connect_args={"ssl": {"ssl_ca": "/etc/ssl/cert.pem"}})
 
